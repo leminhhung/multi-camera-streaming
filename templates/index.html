@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>hello</p>
+    {% for cam in cameras %}
+        <div style="text-align: center;">
+          <div>
+              <p align="center">{{cam['camera_name']}}</p>
+              <img src="{{ url_for('video_feed', cam_id=cam['cam_id']) }}">
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}
